@@ -112,11 +112,11 @@ module internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_h
 
 module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_diameter, lip_height, lip_thickness,
                  lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, ivw_thickness, ivw_width, ivw_height,
-                 ivw_offset_angle = 90, sides = 32)
+                 ivw_offset_angle = 90, sides = 32, showlines = false)
 {
     union()
     {
-        body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, sides, true);
+        body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, sides, showlines);
         base(lower_outer_diameter, body_thickness, sides);
         lip(lip_height, lip_thickness, lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, body_height,
             body_thickness, upper_outer_diameter, sides);
