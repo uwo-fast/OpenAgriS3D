@@ -32,4 +32,4 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
 
 ## Acknowledgements
 
-This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue. The Open Source Agriculture logo seen at the to is by Tori West at the University of Sydney.
+This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue. The Open Source Agriculture logo seen at the top is by [Tori West](https://www.behance.net/gallery/63238039/Open-Source-Agriculture) from the University of Sydney.
