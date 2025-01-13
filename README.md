@@ -1,6 +1,8 @@
+<img src="assets/open-source-agriculture-logopng.png" alt="Open Source Agriculture Logo" style="width: 150px;">
+
 # OpenAgriS3D
 
-A collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
+This is a collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
 Inspired by and a continuation of the paper: [Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019).
 
 ## Introduction
@@ -9,11 +11,12 @@ This repository contains a collection of OpenSCAD designs for agricultural appli
 
 The designs are grouped into five categories:
 
-- [Hand Tools](docs/hand-tools.md)
-- [Food Processing](docs/food-processing.md)
 - [Animal Management](docs/animal-management.md)
-- [Water Management](docs/water-management.md)
+- [Food Processing](docs/food-processing.md)
+- [Hand Tools](docs/hand-tools.md)
 - [Hydroponics](docs/hydroponics.md)
+- [Plant Management](docs/plant_management.md)
+- [Water Management](docs/water-management.md)
 
 ## Goals
 
@@ -26,3 +29,7 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
 ## References
 
 - Pearce, J. M. (2015). Applications of Open Source 3-D Printing on Small Farms. Organic Farming, 1(1), 19-35. https://doi.org/10.12924/of2015.01010019
+
+## Acknowledgements
+
+This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue. The Open Source Agriculture logo seen at the to is by Tori West at the University of Sydney.
