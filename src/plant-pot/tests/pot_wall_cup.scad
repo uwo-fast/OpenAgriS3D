@@ -1,4 +1,4 @@
-use <plant-pot.scad>;
+use <../plant-pot.scad>;
 
 num_sides = 32; // number of points for the polygon
 

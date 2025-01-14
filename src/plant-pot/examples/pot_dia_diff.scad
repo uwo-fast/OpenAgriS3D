@@ -1,18 +1,19 @@
-use <plant-pot.scad>;
+use <../plant-pot.scad>;
 
 num_sides = 32; // number of points for the polygon
 
 body_thickness = 4;
-
 body_height = 100;
 
 upper_dia = 100;
-angle = 10;
-lower_dia = lower_rad_from_angle(angle, body_height, upper_dia);
+lower_dia_diff = 20;
+lower_dia = upper_dia - lower_dia_diff;
 
 echo("upper_dia: ", upper_dia);
 echo("lower_dia: ", lower_dia);
-echo("angle: ", angle);
+
+resulting_angle = cone_angle(upper_dia, lower_dia, body_height);
+echo("resulting_angle: ", resulting_angle);
 
 lip_height = body_thickness * 4;
 lip_thickness = body_thickness * 2;

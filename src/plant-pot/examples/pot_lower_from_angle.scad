@@ -1,4 +1,4 @@
-use <plant-pot.scad>;
+use <../plant-pot.scad>;
 
 num_sides = 32; // number of points for the polygon
 
@@ -6,9 +6,9 @@ body_thickness = 4;
 
 body_height = 100;
 
-lower_dia = 80;
-angle = 12;
-upper_dia = upper_rad_from_angle(angle, body_height, lower_dia);
+upper_dia = 100;
+angle = 10;
+lower_dia = lower_rad_from_angle(angle, body_height, upper_dia);
 
 echo("upper_dia: ", upper_dia);
 echo("lower_dia: ", lower_dia);

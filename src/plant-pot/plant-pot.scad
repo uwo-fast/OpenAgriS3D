@@ -110,21 +110,59 @@ module internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_h
         linear_extrude(ivw_thickness) polygon(ivw_pts);
 }
 
-module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_diameter, lip_height, lip_thickness,
-                 lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, ivw_thickness, ivw_width, ivw_height,
-                 pos_ivw = false, neg_ivw = false, ivw_offset_angle = 90, sides = 32, showlines = false)
+module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_diameter, lip_height = undef,
+                 lip_thickness = undef, lip_top_corner_radius = undef, lip_bottom_corner_radius = undef, lip_fn = 32,
+                 ivw_thickness = undef, ivw_width = undef, ivw_height = undef, pos_ivw = false, neg_ivw = false,
+                 ivw_offset_angle = 90, collar_height = undef, collar_diameter = undef, sides = 32, showlines = false)
 {
     difference()
     {
         union()
         {
+            // body
             body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, sides, showlines);
+
+            // base
             base(lower_outer_diameter, body_thickness, sides);
-            lip(lip_height, lip_thickness, lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, body_height,
-                body_thickness, upper_outer_diameter, sides);
-            lip_seam(lip_bottom_corner_radius, lip_thickness, body_height, body_thickness, upper_outer_diameter, sides);
-            if (!is_undef(ivw_thickness) && !is_undef(ivw_width) && !is_undef(ivw_height) &&
-                !is_undef(ivw_offset_angle) && pos_ivw)
+
+            // lip
+            if (!is_undef(lip_height) && !is_undef(lip_thickness) && !is_undef(lip_top_corner_radius) &&
+                !is_undef(lip_bottom_corner_radius))
+            {
+                lip(lip_height, lip_thickness, lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, body_height,
+                    body_thickness, upper_outer_diameter, sides);
+                lip_seam(lip_bottom_corner_radius, lip_thickness, body_height, body_thickness, upper_outer_diameter,
+                         sides);
+            }
+            else
+            {
+                echo("Error, lip: height, thickness, top_corner_radius, bottom_corner_radius, and fn must be defined");
+            }
+
+            // collar
+            if (!is_undef(collar_height) && !is_undef(collar_diameter))
+            {
+                translate([ 0, 0, body_height + body_thickness ])
+                {
+                    difference()
+                    {
+                        cylinder(h = collar_height, d1 = upper_outer_diameter, d2 = collar_diameter, $fn = sides);
+                        translate([ 0, 0, -zFite / 2 ])
+                            cylinder(h = collar_height + zFite, d1 = upper_outer_diameter - 2 * body_thickness,
+                                     d2 = collar_diameter - 2 * body_thickness, $fn = sides);
+                    }
+                }
+            }
+            else
+            {
+                if (!is_undef(collar_height) || !is_undef(collar_diameter))
+                {
+                    echo("Error, collar: height and diameter must be defined or sll not defined");
+                }
+            }
+
+            // internal vertical walls
+            if (!is_undef(ivw_thickness) && !is_undef(ivw_width) && !is_undef(ivw_height) && pos_ivw)
             {
                 for (i = [0:3])
                 {
@@ -137,19 +175,20 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
             }
             else
             {
-                if (!is_undef(ivw_thickness) || !is_undef(ivw_width) || !is_undef(ivw_height) ||
-                    !is_undef(ivw_offset_angle))
+                if (!is_undef(ivw_thickness) || !is_undef(ivw_width) || !is_undef(ivw_height))
                 {
                     echo("Error, ivw: thickness, width, height, and offset_angle must  be defined or sll not defined");
                 }
             }
         }
+
+        // cut out slots (negative ivw)
         if (!is_undef(ivw_thickness) && !is_undef(ivw_width) && !is_undef(ivw_height) && !is_undef(ivw_offset_angle) &&
             neg_ivw)
         {
             for (i = [0:3])
             {
-                rotate([ 0, 0, i * 90 + 45 ]) translate([ ivw_thickness, 0, -ivw_thickness - zFite ])
+                rotate([ 0, 0, i * 90 + 45 ]) translate([ body_thickness, 0, -body_thickness - zFite ])
                 {
                     internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_height, body_thickness,
                                            ivw_thickness, ivw_width, ivw_height, ivw_offset_angle);
