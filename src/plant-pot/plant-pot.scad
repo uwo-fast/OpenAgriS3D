@@ -14,8 +14,6 @@ function arc_points(radius, angle, fn, angle_offset = 0) =
 
 function translate2dPts(points, offset) = [for (p = points)[p[0] + offset[0], p[1] + offset[1]]];
 
-function translate3dPts(points, offset) = [for (p = points)[p[0] + offset[0], p[1] + offset[1], p[2] + offset[2]]];
-
 function cyl_dia_delta(target_height, upper_outer_diameter, lower_outer_diameter,
                        body_height) = target_height *
                                       tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height));
