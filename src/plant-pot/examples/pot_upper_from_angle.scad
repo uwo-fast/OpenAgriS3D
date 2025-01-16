@@ -8,7 +8,7 @@ body_height = 100;
 
 lower_dia = 80;
 angle = 12;
-upper_dia = upper_rad_from_angle(angle, body_height, lower_dia);
+upper_dia = upper_dia_from_angle(angle, body_height, lower_dia);
 
 echo("upper_dia: ", upper_dia);
 echo("lower_dia: ", lower_dia);
