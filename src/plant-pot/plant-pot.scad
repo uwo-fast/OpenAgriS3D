@@ -3,9 +3,22 @@ zFite = $preview ? 0.1 : 0; // z-fighting fix
 
 function cone_angle(d1, d2, h) = atan((d1 - d2) / (2 * h));
 
-function lower_rad_from_angle(angle, h, d1) = d1 - 2 * h * tan(angle);
+function lower_dia_from_angle(angle, h, d1) = d1 - 2 * h * tan(angle);
 
-function upper_rad_from_angle(angle, h, d2) = d2 + 2 * h * tan(angle);
+function upper_dia_from_angle(angle, h, d2) = d2 + 2 * h * tan(angle);
+
+function arc_points(radius, angle, fn, angle_offset = 0) =
+    let(step = angle / (fn - 1),
+        points = [for (i = [0:fn -
+                              1])[radius * cos(angle_offset + i * step), radius *sin(angle_offset + i * step)]]) points;
+
+function translate2dPts(points, offset) = [for (p = points)[p[0] + offset[0], p[1] + offset[1]]];
+
+function translate3dPts(points, offset) = [for (p = points)[p[0] + offset[0], p[1] + offset[1], p[2] + offset[2]]];
+
+function cyl_dia_delta(target_height, upper_outer_diameter, lower_outer_diameter,
+                       body_height) = target_height *
+                                      tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height));
 
 // body
 module body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, rot_poly, showlines = false)
@@ -29,6 +42,55 @@ module body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickn
     }
 }
 
+module body1(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, rot_poly, snap_offset = undef,
+             snap_rad = undef, showlines = false)
+{
+    upper_inner_diameter = upper_outer_diameter - 2 * body_thickness;
+    lower_inner_diameter = lower_outer_diameter - 2 * body_thickness;
+
+    // body
+    translate([ 0, 0, body_thickness ]) difference()
+    {
+        cylinder(h = body_height, d1 = lower_outer_diameter, d2 = upper_outer_diameter, $fn = rot_poly);
+        translate([ 0, 0, -zFite / 2 ])
+            cylinder(h = body_height + zFite, d1 = lower_inner_diameter, d2 = upper_inner_diameter, $fn = rot_poly);
+    }
+
+    // create snap seam
+    if (!is_undef(snap_offset) && !is_undef(snap_rad))
+    {
+
+        cone_ang = cone_angle(upper_outer_diameter, lower_outer_diameter, body_height);
+        loc_upper_outer_diameter = upper_dia_from_angle(angle = cone_ang, h = snap_offset, d2 = lower_outer_diameter);
+        snapseam_pts = arc_points(radius = snap_rad, angle = 180, fn = rot_poly, angle_offset = -90 - cone_ang);
+        snapseam_rot_pts = translate2dPts(snapseam_pts, [ loc_upper_outer_diameter / 2, 0 ]);
+
+        translate([ 0, 0, snap_offset ]) rotate_extrude(angle = 360) polygon(points = snapseam_rot_pts);
+    }
+
+    // draw lines to show the cone angle
+    if (showlines)
+    {
+        translate([ lower_outer_diameter / 2, 0, 0 ])
+            rotate(a = cone_angle(upper_outer_diameter, lower_outer_diameter, body_height), v = [ 0, 1, 0 ])
+                color("red") cube([ 1, 1, body_height ], center = false);
+
+        color("blue") translate([ upper_outer_diameter / 2, 0, 0 ]) cube([ 1, 1, body_height ], center = false);
+    }
+}
+
+b_height = 50;
+u_outer_dia = 55;
+l_outer_dia = 38;
+b_thickness = 1.2;
+r_poly = 32;
+
+ss_offset = 20;
+ss_radius = 1;
+
+body1(body_height = b_height, upper_outer_diameter = u_outer_dia, lower_outer_diameter = l_outer_dia,
+      body_thickness = b_thickness, rot_poly = r_poly, snap_offset = ss_offset, snap_rad = ss_radius, showlines = true);
+
 // base
 module base(lower_outer_diameter, body_thickness, rot_poly)
 {
@@ -49,26 +111,19 @@ module base(lower_outer_diameter, body_thickness, rot_poly)
     }
 }
 
-function arc_points(radius, angle, fn, angle_offset = 0) =
-    let(step = angle / (fn - 1),
-        points = [for (i = [0:fn -
-                              1])[radius * cos(angle_offset + i * step), radius *sin(angle_offset + i * step)]]) points;
-
-function translatePts(points, offset) = [for (p = points)[p[0] + offset[0], p[1] + offset[1]]];
-
 module lip(lip_height, lip_thickness, lip_top_corner_radius, lip_bottom_corner_radius, lip_fn, body_height,
            body_thickness, upper_outer_diameter, rot_poly)
 {
     upper_inner_diameter = upper_outer_diameter - 2 * body_thickness;
     // points_bl = arc_points(lip_top_corner_radius, 90, 180);
     points_bl = [[ 0, 0 ]];
-    points_br = translatePts(arc_points(lip_bottom_corner_radius, 90, lip_fn, 270),
-                             [ lip_thickness - lip_bottom_corner_radius, lip_bottom_corner_radius ]);
+    points_br = translate2dPts(arc_points(lip_bottom_corner_radius, 90, lip_fn, 270),
+                               [ lip_thickness - lip_bottom_corner_radius, lip_bottom_corner_radius ]);
 
-    points_tl = translatePts(arc_points(lip_top_corner_radius, 90, lip_fn, 90),
-                             [ +lip_top_corner_radius, lip_height - lip_top_corner_radius ]);
-    points_tr = translatePts(arc_points(lip_top_corner_radius, 90, lip_fn, 0),
-                             [ lip_thickness - lip_top_corner_radius, lip_height - lip_top_corner_radius ]);
+    points_tl = translate2dPts(arc_points(lip_top_corner_radius, 90, lip_fn, 90),
+                               [ +lip_top_corner_radius, lip_height - lip_top_corner_radius ]);
+    points_tr = translate2dPts(arc_points(lip_top_corner_radius, 90, lip_fn, 0),
+                               [ lip_thickness - lip_top_corner_radius, lip_height - lip_top_corner_radius ]);
 
     lip_poly = concat(points_br, points_tr, points_tl, points_bl);
 
@@ -94,20 +149,13 @@ module lip_seam(lip_bottom_corner_radius, lip_thickness, body_height, body_thick
     }
 }
 
-function ivw_tb_width_delta(ivw_height, upper_outer_diameter, lower_outer_diameter,
-                            body_height) = ivw_height *
-                                           tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height));
-
 module internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_height, body_thickness, ivw_thickness,
                               ivw_width, ivw_height, ivw_offset_angle)
 {
     lower_inner_diameter = lower_outer_diameter - 2 * body_thickness;
     ivw_pts = [
         [ 0, 0 ], [ ivw_width, 0 ],
-        [
-            ivw_width + ivw_tb_width_delta(ivw_height, upper_outer_diameter, lower_outer_diameter, body_height),
-            ivw_height
-        ],
+        [ ivw_width + cyl_dia_delta(ivw_height, upper_outer_diameter, lower_outer_diameter, body_height), ivw_height ],
         [ 0, ivw_height ]
     ];
     translate([ lower_inner_diameter / 2 - ivw_width, ivw_thickness / 2, body_thickness ]) rotate([ 90, 0, 0 ])
@@ -190,10 +238,10 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
         if (!is_undef(ivw_thickness) && !is_undef(ivw_width) && !is_undef(ivw_height) && !is_undef(ivw_offset_angle) &&
             neg_ivw)
         {
-            neg_ivw_width = ivw_width + ivw_tb_width_delta(
-                                            ivw_height, upper_outer_diameter, lower_outer_diameter,
-                                            body_height); // width of the bottom width of the negative ivw must equal
-                                                          // the top width of the positive ivw so they can fit together
+            neg_ivw_width =
+                ivw_width + cyl_dia_delta(ivw_height, upper_outer_diameter, lower_outer_diameter,
+                                          body_height); // width of the bottom width of the negative ivw must equal
+                                                        // the top width of the positive ivw so they can fit together
             for (i = [0:3])
             {
                 rotate([ 0, 0, i * 90 + 45 ]) translate([ body_thickness, 0, -body_thickness - zFite ])

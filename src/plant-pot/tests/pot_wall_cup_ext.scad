@@ -11,8 +11,9 @@ lower_dia = 38;
 collar_diameter = 100;
 collar_height = 53;
 
-ivw = true;
+ivw = false;
 slots = true;
+lines = true;
 
 if (ivw)
 {
@@ -23,10 +24,10 @@ if (ivw)
     plant_pot(body_height = body_height, body_thickness = body_thickness, upper_outer_diameter = upper_dia,
               lower_outer_diameter = lower_dia, ivw_thickness = ivw_thickness, ivw_width = ivw_width,
               ivw_height = ivw_height, pos_ivw = ivw, neg_ivw = slots, collar_height = collar_height,
-              collar_diameter = collar_diameter, sides = num_sides);
+              collar_diameter = collar_diameter, sides = num_sides, showlines = lines);
 }
 else
 {
     plant_pot(body_height = body_height, body_thickness = body_thickness, upper_outer_diameter = upper_dia,
-              lower_outer_diameter = lower_dia);
+              lower_outer_diameter = lower_dia, showlines = lines);
 }
