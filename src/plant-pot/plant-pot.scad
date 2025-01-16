@@ -218,15 +218,20 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
         {
             neg_ivw_width =
                 ivw_width + cyl_dia_delta(ivw_height, upper_outer_diameter, lower_outer_diameter,
-                                          body_height); // width of the bottom width of the negative ivw must equal
-                                                        // the top width of the positive ivw so they can fit together
+                                          body_height); // width of the bottom width of the neg ivw must equal
+                                                        // the top width of the pos ivw so they can fit together
+            neg_ivw_thickness =
+                ivw_thickness * 1.5; // make the negative ivw thicker than the positive ivw so it can fit
+            neg_ivw_height =
+                ivw_height + ivw_thickness; // make the negative ivw taller than the positive ivw  so it can fit
+
             for (i = [0:3])
             {
                 rotate([ 0, 0, i * 90 + 45 + ivw_offset_angle ])
                     translate([ body_thickness, 0, -body_thickness - zFite ])
                 {
                     internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_height, body_thickness,
-                                           ivw_thickness, neg_ivw_width, ivw_height);
+                                           neg_ivw_thickness, neg_ivw_width, neg_ivw_height);
                 }
             }
         }

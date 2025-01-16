@@ -6,10 +6,10 @@ body_height = 50;
 upper_dia = 54 + 1;
 lower_dia = 38;
 collar_diameter = 100;
-collar_height = 53;
+collar_height = undef; //53;
 
 // Internal vertical wall parameters
-ivw = false; // Internal vertical wall flag
+ivw = true; // Internal vertical wall flag
 
 ivw_pos = true; // flag to create internal vertical walls
 ivw_neg = true; // flag to create internal vertical slots
