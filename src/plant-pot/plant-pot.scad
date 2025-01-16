@@ -94,6 +94,10 @@ module lip_seam(lip_bottom_corner_radius, lip_thickness, body_height, body_thick
     }
 }
 
+function ivw_tb_width_delta(ivw_height, upper_outer_diameter, lower_outer_diameter,
+                            body_height) = ivw_height *
+                                           tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height));
+
 module internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_height, body_thickness, ivw_thickness,
                               ivw_width, ivw_height, ivw_offset_angle)
 {
@@ -101,7 +105,7 @@ module internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_h
     ivw_pts = [
         [ 0, 0 ], [ ivw_width, 0 ],
         [
-            ivw_width + ivw_height * tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height)),
+            ivw_width + ivw_tb_width_delta(ivw_height, upper_outer_diameter, lower_outer_diameter, body_height),
             ivw_height
         ],
         [ 0, ivw_height ]
@@ -186,12 +190,16 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
         if (!is_undef(ivw_thickness) && !is_undef(ivw_width) && !is_undef(ivw_height) && !is_undef(ivw_offset_angle) &&
             neg_ivw)
         {
+            neg_ivw_width = ivw_width + ivw_tb_width_delta(
+                                            ivw_height, upper_outer_diameter, lower_outer_diameter,
+                                            body_height); // width of the bottom width of the negative ivw must equal
+                                                          // the top width of the positive ivw so they can fit together
             for (i = [0:3])
             {
                 rotate([ 0, 0, i * 90 + 45 ]) translate([ body_thickness, 0, -body_thickness - zFite ])
                 {
                     internal_vertical_wall(upper_outer_diameter, lower_outer_diameter, body_height, body_thickness,
-                                           ivw_thickness, ivw_width, ivw_height, ivw_offset_angle);
+                                           ivw_thickness, neg_ivw_width, ivw_height, ivw_offset_angle);
                 }
             }
         }
