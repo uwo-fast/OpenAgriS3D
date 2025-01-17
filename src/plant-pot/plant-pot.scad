@@ -1,5 +1,6 @@
 // plant pot
 zFite = $preview ? 0.1 : 0; // z-fighting fix
+$fn = $preview ? 64 : 128; // number of fractions for a circle
 
 function cone_angle(d1, d2, h) = atan((d1 - d2) / (2 * h));
 
@@ -19,7 +20,7 @@ function cyl_dia_delta(target_height, upper_outer_diameter, lower_outer_diameter
                                       tan(cone_angle(upper_outer_diameter, lower_outer_diameter, body_height));
 
 module body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickness, rot_poly, snap_position = undef,
-            snap_rad = undef, showlines = false)
+            snap_rad = undef, snap_gaps = undef, showlines = false)
 {
     wall_height = body_height - body_thickness;
     upper_inner_diameter = upper_outer_diameter - 2 * body_thickness;
@@ -42,10 +43,18 @@ module body(body_height, upper_outer_diameter, lower_outer_diameter, body_thickn
             cone_ang = cone_angle(upper_outer_diameter, lower_outer_diameter, body_height);
             loc_upper_outer_diameter =
                 upper_dia_from_angle(angle = cone_ang, h = snap_position, d2 = lower_outer_diameter);
-            snapseam_pts = arc_points(radius = snap_rad, angle = 180, fn = rot_poly, angle_offset = -90 - cone_ang);
+            snapseam_pts = arc_points(radius = snap_rad, angle = 360, fn = rot_poly, angle_offset = -90 - cone_ang);
             snapseam_rot_pts = translate2dPts(snapseam_pts, [ loc_upper_outer_diameter / 2, 0 ]);
-
-            translate([ 0, 0, snap_position ]) rotate_extrude(angle = 360) polygon(points = snapseam_rot_pts);
+            if (is_undef(snap_gaps))
+                translate([ 0, 0, snap_position ]) rotate_extrude(angle = 360) polygon(points = snapseam_rot_pts);
+            else
+                translate([ 0, 0, snap_position ])
+                {
+                    for (i = [0:snap_gaps[1] - 1])
+                        rotate([ 0, 0, i * 360 / snap_gaps[1] + 360 / 2 * snap_gaps[0] / snap_gaps[1] ])
+                            rotate_extrude(angle = (360 * snap_gaps[0]) / snap_gaps[1])
+                                polygon(points = snapseam_rot_pts);
+                }
         }
     }
 
@@ -135,7 +144,7 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
                  lip_thickness = undef, lip_top_corner_radius = undef, lip_bottom_corner_radius = undef, lip_fn = 32,
                  ivw_thickness = undef, ivw_width = undef, ivw_height = undef, pos_ivw = false, neg_ivw = false,
                  ivw_offset_angle = 90, collar_height = undef, collar_diameter = undef, snap_position = undef,
-                 snap_radius = undef, sides = 32, showlines = false)
+                 snap_radius = undef, snap_gaps = undef, sides = 32, showlines = false)
 {
     difference()
     {
@@ -144,7 +153,7 @@ module plant_pot(body_height, body_thickness, upper_outer_diameter, lower_outer_
             // body
             body(body_height = body_height, upper_outer_diameter = upper_outer_diameter,
                  lower_outer_diameter = lower_outer_diameter, body_thickness = body_thickness, rot_poly = sides,
-                 snap_position = snap_position, snap_rad = snap_radius, showlines = showlines);
+                 snap_position = snap_position, snap_rad = snap_radius, snap_gaps = snap_gaps, showlines = showlines);
 
             // base
             base(lower_outer_diameter = lower_outer_diameter, body_thickness = body_thickness, rot_poly = sides);
