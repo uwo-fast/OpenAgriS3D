@@ -20,9 +20,9 @@ ivw_height = body_height * 0.7; // 70% of the body height
 ivw_offset_angle = 90;          // Offset angle for the internal vertical walls
 
 // Snaps to click into the holder
-snap_offset = 10; // Offset from the top of the body
+snap_offset = 12; // Offset from the top of the body
 snap_height_pos = body_height - snap_offset;
-snap_radius = body_thickness; // Radius of the snap
+snap_radius = body_thickness * 0.75; // Radius of the snap
 
 if (ivw)
 {
