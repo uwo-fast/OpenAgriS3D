@@ -4,6 +4,7 @@ $fn = $preview ? 32 : 64; // number of fractions for a circle
 
 // High numbers produce a circle, low numbers produce a polygon (i.e. 4 = square, 6 = hexagon, etc.)
 num_sides = 32; // number of sides on the pot
+// TODO: why does this break when set to above 32
 
 // Main user parameters
 body_thickness = 1.2;
@@ -25,7 +26,7 @@ ivw_height = body_height * 0.7; // 70% of the body height
 ivw_offset_angle = 90;          // Offset angle for the internal vertical walls
 
 // Snaps to click into the holder
-snap_offset = 12; // Offset from the top of the body
+snap_offset = 11; // Offset from the top of the body
 snap_height_pos = body_height - snap_offset;
 snap_radius = body_thickness * 0.75; // Radius of the snap
 snap_gaps = [ 0.5, 4 ];              // 50%  and 4 gap cuts
