@@ -11,7 +11,7 @@ body_height = 50;
 upper_dia = 54;
 lower_dia = 38;
 collar_diameter = 100;
-collar_height = undef; // 53;
+collar_height = 53;
 
 // Internal vertical wall parameters
 ivw = true; // Internal vertical wall flag
