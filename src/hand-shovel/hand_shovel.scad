@@ -3,9 +3,11 @@
 
 
 
-scale(0.75)rotate([0,180,0])handle();
+
+
+scale(0.75) rotate([ 0, 180, 0 ]) handle();
 scale(0.75) rotate([ 0, 180, 0 ]) adaptor();
-scale(0.75)rotate([180,0,0])shovel();
+scale(0.75) rotate([ 180, 0, 0 ]) shovel();
 
 // this function generates each handle segment for the shovel
 module adaptor(height = 17,    // the height in mm of the handle
