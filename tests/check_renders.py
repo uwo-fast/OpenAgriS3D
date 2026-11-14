@@ -62,7 +62,6 @@ EXPECTED_SNAP_PRESETS = {
 
 SKIP = {
     "cad/plant-pot/plant-pot.scad": "a library of modules; its examples and test prints render it",
-    "cad/wall-pot-holder/examples/small-pot_3x5.scad": "a stub holding only a comment",
 }
 
 
