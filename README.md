@@ -30,6 +30,14 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
 
 - Pearce, J. M. (2015). Applications of Open Source 3-D Printing on Small Farms. Organic Farming, 1(1), 19-35. https://doi.org/10.12924/of2015.01010019
 
+## Checks
+
+`just check` renders every design and test-print preset with warnings as errors,
+and compares each one's size and volume with its recorded values
+(`tests/check_renders.py`). CI runs it on every pull request. A new `.scad` file
+fails the check until it is added there. The check covers geometry only, not how a
+print performs.
+
 ## Licence
 
 The designs come from several authors, and each keeps its own licence: MIT for the
