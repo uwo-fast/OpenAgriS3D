@@ -1,6 +1,8 @@
 # Hand Shovel
 
-src: https://www.appropedia.org/Hand_Shovel ; https://www.thingiverse.com/thing:577651
+- **Author:** Zach Malinowski (zmalinow)
+- **Licence:** [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/)
+- **Source:** <https://www.appropedia.org/Hand_Shovel> · <https://www.thingiverse.com/thing:577651>
 
 ## TODO
 

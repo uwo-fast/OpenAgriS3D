@@ -30,6 +30,14 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
 
 - Pearce, J. M. (2015). Applications of Open Source 3-D Printing on Small Farms. Organic Farming, 1(1), 19-35. https://doi.org/10.12924/of2015.01010019
 
+## Licence
+
+The designs come from several authors, and each keeps its own licence: MIT for the
+FAST Research Group's own designs, and CC BY-SA, CC BY-NC-SA, GNU GPL, BSD, CC0 or
+public domain for the others. Two of them, the ant trap and the irrigation stakes,
+are **not for commercial use**. [`LICENSING.md`](LICENSING.md) lists each design's
+author, source and licence.
+
 ## Acknowledgements
 
 This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue. The Open Source Agriculture logo seen at the top is by [Tori West](https://www.behance.net/gallery/63238039/Open-Source-Agriculture) from the University of Sydney.

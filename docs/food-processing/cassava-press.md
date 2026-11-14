@@ -1,6 +1,8 @@
 # Cassava Press
 
-src: https://www.appropedia.org/Cassava_Press
+- **Author:** Brian (Appropedia)
+- **Licence:** public domain
+- **Source:** <https://www.appropedia.org/Cassava_Press>
 
 ## Purchased Parts
 -5 1/4-20 nuts
