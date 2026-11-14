@@ -3,13 +3,14 @@
 # OpenAgriS3D
 
 This is a collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
-Inspired by and a continuation of the paper: [Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019).
+Inspired by and a continuation of the paper [Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019)
+([open-access copy](https://digitalcommons.mtu.edu/materials_fp/20)).
 
 ## Introduction
 
 This repository contains a collection of OpenSCAD designs for agricultural applications, focusing on small-scale organic farming. To get started and see what the library has to offer check out the [docs](docs/README.md).
 
-The designs are grouped into five categories:
+The designs are grouped into six categories:
 
 - [Animal Management](docs/animal-management.md)
 - [Food Processing](docs/food-processing.md)
@@ -17,6 +18,10 @@ The designs are grouped into five categories:
 - [Hydroponics](docs/hydroponics.md)
 - [Plant Management](docs/plant-management.md)
 - [Water Management](docs/water-management.md)
+
+Each design's OpenSCAD source is in `cad/<design>/`. Open a `.scad` file in
+[OpenSCAD](https://openscad.org/), adjust its parameters in the Customizer, and
+export an STL to print.
 
 ## Goals
 
@@ -29,6 +34,8 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
 ## References
 
 - Pearce, J. M. (2015). Applications of Open Source 3-D Printing on Small Farms. Organic Farming, 1(1), 19-35. https://doi.org/10.12924/of2015.01010019
+  - The publisher's page for this DOI returned an error when checked on
+    2026-11-14. Michigan Tech's Digital Commons holds a copy: https://digitalcommons.mtu.edu/materials_fp/20
 
 ## Licence
 
