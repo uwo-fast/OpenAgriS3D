@@ -1,6 +1,6 @@
 <img src="assets/open-source-agriculture-logopng.png" alt="Open Source Agriculture Logo" style="width: 150px;">
 
-# OpenAgriS3D
+# farm-tools-scad
 
 This is a collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
 Inspired by and a continuation of the paper [Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019)
