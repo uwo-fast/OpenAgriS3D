@@ -37,6 +37,14 @@ Contributions are welcome! If you have a design or idea for a 3D printed agricul
   - The publisher's page for this DOI returned an error when checked on
     2026-11-14. Michigan Tech's Digital Commons holds a copy: https://digitalcommons.mtu.edu/materials_fp/20
 
+## Checks
+
+`just check` renders every design and test-print preset with warnings as errors,
+and compares each one's size and volume with its recorded values
+(`tests/check_renders.py`). CI runs it on every pull request. A new `.scad` file
+fails the check until it is added there. The check covers geometry only, not how a
+print performs.
+
 ## Licence
 
 The designs come from several authors, and each keeps its own licence: MIT for the
