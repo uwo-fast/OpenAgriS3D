@@ -15,7 +15,7 @@ The designs are grouped into five categories:
 - [Food Processing](docs/food-processing.md)
 - [Hand Tools](docs/hand-tools.md)
 - [Hydroponics](docs/hydroponics.md)
-- [Plant Management](docs/plant_management.md)
+- [Plant Management](docs/plant-management.md)
 - [Water Management](docs/water-management.md)
 
 ## Goals
