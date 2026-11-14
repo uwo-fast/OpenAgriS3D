@@ -1,0 +1,29 @@
+{
+    "parameterSets": {
+        "pot_wall_snap": {
+            "ivw": "true",
+            "ivw_pos": "false",
+            "ivw_neg": "true",
+            "collar_height": "0"
+        },
+        "pot_wall_snap_ivw": {
+            "ivw": "true",
+            "ivw_pos": "true",
+            "ivw_neg": "true",
+            "collar_height": "0"
+        },
+        "pot_wall_snap_collar": {
+            "ivw": "true",
+            "ivw_pos": "false",
+            "ivw_neg": "true",
+            "collar_height": "53"
+        },
+        "pot_wall_snap_collar_ivw": {
+            "ivw": "true",
+            "ivw_pos": "true",
+            "ivw_neg": "true",
+            "collar_height": "53"
+        }
+    },
+    "fileFormatVersion": "1"
+}
