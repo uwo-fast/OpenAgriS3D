@@ -7,3 +7,5 @@ Plant management is critical for maintaining healthy and productive crops. This 
 ## Designs
 
 - [Plant Pot](plant-management/plant-pot.md)
+- [Wall Pot Holder](plant-management/wall-pot-holder.md)
+- [Root Scaffold](plant-management/root-scaffold.md) (a concept, no design yet)

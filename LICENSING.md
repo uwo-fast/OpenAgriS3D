@@ -11,7 +11,7 @@ table is where the full picture lives.
 
 ## What applies where
 
-| Design (`src/…`) | Author | Published at | Licence |
+| Design (`cad/…`) | Author | Published at | Licence |
 | --- | --- | --- | --- |
 | `plant-pot/` | Cameron K. Brooks, FAST Research Group | this repository | MIT |
 | `wall-pot-holder/` | Cameron K. Brooks, FAST Research Group | this repository | MIT |
