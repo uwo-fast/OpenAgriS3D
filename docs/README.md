@@ -1,8 +1,4 @@
-# Docs
-
-## Designs
-
-Here is a list of 3D printable designs for organic farming, organized by category:
+# Designs
 
 - [Animal Management](animal-management.md)
   - [Chicken Feed Holder](animal-management/chicken-feed-holder.md)

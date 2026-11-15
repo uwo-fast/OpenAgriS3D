@@ -6,4 +6,4 @@
 
 ## Purchased materials
 
-[Quick setting epoxy](http://www.saltypeaks.com/products/4179/-Quick-Drying-Epoxy-Resin.html)
+- Quick-setting epoxy

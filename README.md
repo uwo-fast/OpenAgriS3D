@@ -1,14 +1,10 @@
 # farm-tools-scad
 
-This is a collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
-Inspired by and a continuation of the paper [Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019)
+Parametric OpenSCAD designs for small-scale farming tools, continuing the paper
+[Applications of Open Source 3-D Printing on Small Farms](https://doi.org/10.12924/of2015.01010019)
 ([open-access copy](https://digitalcommons.mtu.edu/materials_fp/20)).
 
-## Introduction
-
-This repository contains a collection of OpenSCAD designs for agricultural applications, focusing on small-scale organic farming. To get started and see what the library has to offer check out the [docs](docs/README.md).
-
-The designs are grouped into six categories:
+The [docs](docs/README.md) list every design. They are grouped into six categories:
 
 - [Animal Management](docs/animal-management.md)
 - [Food Processing](docs/food-processing.md)
@@ -19,21 +15,19 @@ The designs are grouped into six categories:
 
 Each design's OpenSCAD source is in `cad/<design>/`. Open a `.scad` file in
 [OpenSCAD](https://openscad.org/), adjust its parameters in the Customizer, and
-export an STL to print.
-
-## Goals
-
-The goal of this repository is to provide a platform for collaborative development and sharing of open-source 3D printed designs for sustainable agriculture. By leveraging distributed manufacturing and open-source technologies, we aim to reduce the economic costs of farming and promote self-sufficiency in rural communities.
+export an STL to print. CI renders with OpenSCAD development snapshot 2026.10.15.
+The plant pot is a library of modules, so open one of its `examples/` or
+`test-prints/` files instead.
 
 ## Contributing
 
-Contributions are welcome! If you have a design or idea for a 3D printed agricultural tool or equipment, please submit a pull request or issue or email `cbrook49@uwo.ca` with a clear outline of your idea / need and I will try my best to help in a timely manner!
+To add a design or suggest one, open a pull request or an issue, or email
+`cbrook49@uwo.ca` with what you need it to do.
 
 ## References
 
 - Pearce, J. M. (2015). Applications of Open Source 3-D Printing on Small Farms. Organic Farming, 1(1), 19-35. https://doi.org/10.12924/of2015.01010019
-  - The publisher's page for this DOI returned an error when checked on
-    2026-11-14. Michigan Tech's Digital Commons holds a copy: https://digitalcommons.mtu.edu/materials_fp/20
+  (open-access copy: https://digitalcommons.mtu.edu/materials_fp/20)
 
 ## Checks
 
@@ -49,8 +43,5 @@ The designs come from several authors, and each keeps its own licence: MIT for t
 FAST Research Group's own designs, and CC BY-SA, CC BY-NC-SA, GNU GPL, BSD, CC0 or
 public domain for the others. Two of them, the ant trap and the irrigation stakes,
 are **not for commercial use**. [`LICENSING.md`](LICENSING.md) lists each design's
-author, source and licence.
-
-## Acknowledgements
-
-This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue.
+author, source and licence. If an attribution there is wrong or missing, please
+open an issue.
