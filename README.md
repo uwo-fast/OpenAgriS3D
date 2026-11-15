@@ -1,5 +1,3 @@
-<img src="assets/open-source-agriculture-logopng.png" alt="Open Source Agriculture Logo" style="width: 150px;">
-
 # farm-tools-scad
 
 This is a collection of parametric designs for agricultural applications to enable low-cost, sustainable and resilient farming practices.
@@ -55,4 +53,4 @@ author, source and licence.
 
 ## Acknowledgements
 
-This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue. The Open Source Agriculture logo seen at the top is by [Tori West](https://www.behance.net/gallery/63238039/Open-Source-Agriculture) from the University of Sydney.
+This library would not be possible without the effort and creativity of the open source community, we have done our best to give proper attribution where it's owed but if we forgot anything please let us know and we will rectify the issue.
