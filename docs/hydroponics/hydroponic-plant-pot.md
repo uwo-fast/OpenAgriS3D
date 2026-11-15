@@ -1,5 +1,5 @@
 # Hydroponic Plant Pot
 
 - **Author:** vik
-- **Licence:** GNU GPL
+- **Licence:** GPL-2.0
 - **Source:** <https://www.thingiverse.com/thing:16847>

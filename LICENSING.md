@@ -21,11 +21,11 @@ table is where the full picture lives.
 | `corn-sheller/` | Joshua M. Pearce (jpearce) | [Thingiverse thing:386755](https://www.thingiverse.com/thing:386755); [Appropedia: Corn sheller](https://www.appropedia.org/Corn_sheller) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `custom-shovel-handle/` | kylar_stern (Appropedia credits Shane Clifford) | [Thingiverse thing:555240](https://www.thingiverse.com/thing:555240) (2014); [Appropedia: Custom Shovel Handle](https://www.appropedia.org/Custom_Shovel_Handle) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `field-dressing-tool/` | Zachary Dubiel | [Appropedia: Field Dressing Tool](https://www.appropedia.org/Field_Dressing_Tool) (2014) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), the page's licence; see the note below |
-| `garden-hose-splitter/` | sclarsen (Stuart Larsen) | [Thingiverse thing:577610](https://www.thingiverse.com/thing:577610); [Appropedia: 3D printed garden hose splitter](https://www.appropedia.org/3D_printed_garden_hose_splitter) | BSD |
+| `garden-hose-splitter/` | sclarsen (Stuart Larsen) | [Thingiverse thing:577610](https://www.thingiverse.com/thing:577610) (2014); [Appropedia: 3D printed garden hose splitter](https://www.appropedia.org/3D_printed_garden_hose_splitter) | [BSD-2-Clause](cad/garden-hose-splitter/LICENSE) |
 | `gasket/` | Joshua M. Pearce (jpearce) | [Thingiverse thing:58665](https://www.thingiverse.com/thing:58665) (2013) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `hand-shovel/` | zmalinow (Zach Malinowski) | [Thingiverse thing:577651](https://www.thingiverse.com/thing:577651); [Appropedia: Hand Shovel](https://www.appropedia.org/Hand_Shovel) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `hydroponic-halo-ring/` | mvalessi (Matthew Alessi) | [Thingiverse thing:577334](https://www.thingiverse.com/thing:577334); [Appropedia: Hydroponic halo ring](https://www.appropedia.org/Hydroponic_halo_ring) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain dedication) |
-| `hydroponic-plant-pot/` | vik | [Thingiverse thing:16847](https://www.thingiverse.com/thing:16847) (2012) | GNU GPL |
+| `hydroponic-plant-pot/` | vik | [Thingiverse thing:16847](https://www.thingiverse.com/thing:16847) (2012) | [GPL-2.0](cad/hydroponic-plant-pot/LICENSE) |
 | `irrigation-stake/` | Brian Enigma (BrianEnigma) | [Thingiverse thing:26459](https://www.thingiverse.com/thing:26459) (2012) | [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/) |
 | `pulleys/` | lwilder (Lucas Wilder) | [Thingiverse thing:571542](https://www.thingiverse.com/thing:571542); [Appropedia: 3D-printed pulley](https://www.appropedia.org/3D-printed_pulley) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 
@@ -37,9 +37,10 @@ Exports made from a design (STL, 3MF and the like) carry the design's licence.
   under the same licence.
 - **CC BY-NC-SA** (`ant-trap/`, `irrigation-stake/`): as BY-SA, and **not for
   commercial use**.
-- **GNU GPL** (`hydroponic-plant-pot/`): changes you distribute stay under the GPL,
-  with the source.
-- **BSD** (`garden-hose-splitter/`): keep the author's notice when you redistribute.
+- **GNU GPL v2** (`hydroponic-plant-pot/`): changes you distribute stay under the
+  GPL v2, with the source and a copy of its text, which is in the design's folder.
+- **BSD-2-Clause** (`garden-hose-splitter/`): keep the copyright notice and licence
+  text in the design's folder when you redistribute.
 - **Public domain and CC0** (`cassava-press/`, `hydroponic-halo-ring/`): no
   conditions.
 - **MIT:** keep the copyright notice in [`LICENSE`](LICENSE).
@@ -51,8 +52,11 @@ Exports made from a design (STL, 3MF and the like) carry the design's licence.
   splitter, halo ring, pulleys, hand shovel and shovel handle), Appropedia's device
   data lists CERN-OHL-S as the hardware licence, which the Thingiverse release
   doesn't say.
-- Thingiverse names the licence without a version for CC BY-SA, CC BY-NC-SA and the
-  GPL. The links above go to version 3.0 of the CC licences.
+- Thingiverse names the licence without a version for CC BY-SA and CC BY-NC-SA. The
+  links above go to version 3.0 of the CC licences. Its "GNU - GPL" and "BSD
+  License" links point at the GPL v2 and the 2-clause BSD licence; neither release
+  grants "or later". The release carries no copyright line, so the BSD notice
+  names the author as the two source pages credit the design.
 - **Field dressing tool:** Appropedia's page for its file, `File:OSAT2.scad`, gives
   its licence as "Unknown"; the page the file is published on is CC BY-SA 3.0,
   which this table follows.
