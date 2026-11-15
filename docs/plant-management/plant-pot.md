@@ -40,7 +40,7 @@ time of each preset against the two fixed-size cleat pots.
 
 The optional walls follow
 [Container Design Affects Shoot and Root Growth of Vegetable Plant](https://doi.org/10.21273/HORTSCI14954-20)
-(HortScience 55(6), 787–794, 2020). In cucumber, pepper and tomato seedlings,
+(HortScience 55(6), 787-794, 2020). In cucumber, pepper and tomato seedlings,
 containers with internal vertical walls gave more root surface and biomass.
 The type of container (round or square) had no effect, and the substrate (coir
 fibre or perlite) no significant one. The authors suggest the walls may also help plants through

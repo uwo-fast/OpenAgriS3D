@@ -6,8 +6,8 @@
 
 ## Purchased parts
 
-- 5 × ¼-20 nuts
-- 5 × ¼-20 wing nuts or standard nuts
-- 5 × ¼-20 threaded rods, 7.5 in long
-- 3 × ½-16 nuts (jam nuts if available)
-- 1 × ½-16 threaded rod, at least 6 in long
+- 5 x 1/4-20 nuts
+- 5 x 1/4-20 wing nuts or standard nuts
+- 5 x 1/4-20 x 7.5 in threaded rods
+- 3 x 1/2-16 nuts (jam nuts if available)
+- 1 x 1/2-16 threaded rod (at least 6 in)
