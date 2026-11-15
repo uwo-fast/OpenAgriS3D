@@ -21,7 +21,7 @@ table is where the full picture lives.
 | `corn-sheller/` | Joshua M. Pearce (jpearce) | [Thingiverse thing:386755](https://www.thingiverse.com/thing:386755); [Appropedia: Corn sheller](https://www.appropedia.org/Corn_sheller) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `custom-shovel-handle/` | kylar_stern (Appropedia credits Shane Clifford) | [Thingiverse thing:555240](https://www.thingiverse.com/thing:555240) (2014); [Appropedia: Custom Shovel Handle](https://www.appropedia.org/Custom_Shovel_Handle) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `field-dressing-tool/` | Zachary Dubiel | [Appropedia: Field Dressing Tool](https://www.appropedia.org/Field_Dressing_Tool) (2014) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), the page's licence; see the note below |
-| `garden-hose-splitter/` | sclarsen (Stuart Larsen) | [Thingiverse thing:577610](https://www.thingiverse.com/thing:577610) (2014); [Appropedia: 3D printed garden hose splitter](https://www.appropedia.org/3D_printed_garden_hose_splitter) | [BSD-3-Clause](cad/garden-hose-splitter/LICENSE) |
+| `garden-hose-splitter/` | sclarsen (Stuart Larsen) | [Thingiverse thing:577610](https://www.thingiverse.com/thing:577610) (2014); [Appropedia: 3D printed garden hose splitter](https://www.appropedia.org/3D_printed_garden_hose_splitter) | [BSD](cad/garden-hose-splitter/LICENSE), clause count not stated |
 | `gasket/` | Joshua M. Pearce (jpearce) | [Thingiverse thing:58665](https://www.thingiverse.com/thing:58665) (2013) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `hand-shovel/` | zmalinow (Zach Malinowski) | [Thingiverse thing:577651](https://www.thingiverse.com/thing:577651); [Appropedia: Hand Shovel](https://www.appropedia.org/Hand_Shovel) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `hydroponic-halo-ring/` | mvalessi (Matthew Alessi) | [Thingiverse thing:577334](https://www.thingiverse.com/thing:577334); [Appropedia: Hydroponic halo ring](https://www.appropedia.org/Hydroponic_halo_ring) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain dedication) |
@@ -39,7 +39,7 @@ Exports made from a design (STL, 3MF and the like) carry the design's licence.
   commercial use**.
 - **GNU GPL** (`hydroponic-plant-pot/`): changes you distribute stay under the
   GPL, with the source and a copy of its text, which is in the design's folder.
-- **BSD-3-Clause** (`garden-hose-splitter/`): keep the copyright notice and licence
+- **BSD** (`garden-hose-splitter/`, 3-clause text shipped): keep the copyright notice and licence
   text in the design's folder when you redistribute.
 - **Public domain and CC0** (`cassava-press/`, `hydroponic-halo-ring/`): no
   conditions.
