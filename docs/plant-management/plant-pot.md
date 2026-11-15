@@ -42,6 +42,6 @@ The optional walls follow
 [Container Design Affects Shoot and Root Growth of Vegetable Plant](https://doi.org/10.21273/HORTSCI14954-20)
 (HortScience 55(6), 787–794, 2020). In cucumber, pepper and tomato seedlings,
 containers with internal vertical walls gave more root surface and biomass.
-Container shape (round or square) and substrate (coir fibre or perlite) had no
-significant effect. The authors suggest the walls may also help plants through
+The type of container (round or square) had no effect, and the substrate (coir
+fibre or perlite) no significant one. The authors suggest the walls may also help plants through
 water deficit and transplanting.
