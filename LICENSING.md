@@ -53,10 +53,11 @@ Exports made from a design (STL, 3MF and the like) carry the design's licence.
   data lists CERN-OHL-S as the hardware licence, which the Thingiverse release
   doesn't say.
 - Thingiverse names the licence without a version for CC BY-SA and CC BY-NC-SA. The
-  links above go to version 3.0 of the CC licences. Its "GNU - GPL" and "BSD
-  License" links point at the GPL v2 and the 2-clause BSD licence; neither release
-  grants "or later". The release carries no copyright line, so the BSD notice
-  names the author as the two source pages credit the design.
+  links above go to version 3.0 of the CC licences. Its "GNU - GPL" link for
+  the hydroponic pot points at the GPL v2, with no "or later" grant, and its "BSD
+  License" link for the hose splitter points at the 2-clause BSD licence. The hose splitter's release carries no copyright
+  line, so its BSD notice names the author as Appropedia does, with the Thingiverse
+  handle.
 - **Field dressing tool:** Appropedia's page for its file, `File:OSAT2.scad`, gives
   its licence as "Unknown"; the page the file is published on is CC BY-SA 3.0,
   which this table follows.
